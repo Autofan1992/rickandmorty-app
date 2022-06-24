@@ -1,0 +1,10 @@
+@import 'antd/dist/antd.css';
+@import 'assets/plugins/bootstrap/bootstrap-utilities.min.css';
+
+.wrapper {
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
