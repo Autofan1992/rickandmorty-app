@@ -27,7 +27,8 @@ const Header: FC = () => {
                     <Title type="warning" level={2} className={`${styles.title} m-0`}>
                         <Link to="" className="text-reset">Rick and morty</Link>
                     </Title>
-                    {likedChars.length > 0 &&
+                    {
+                        likedChars.length > 0 &&
                         <Badge className={`${styles.likesBadge} mt-2`} count={likedChars.length}>
                             <Popover content={likedChars.map(char => <p key={char.id}>{char.name}</p>)}>
                                 <Button size="small">Liked characters</Button>
@@ -37,13 +38,14 @@ const Header: FC = () => {
                 </div>
             </Col>
             <Col className="align-self-end align-self-md-center">
-                {isAuth && <Space align="start">
-                    <img src={avatarUrl ?? avatar} alt="avatar" width="50px"/>
-                    <div className="text-center">
-                        <p className={`${styles.loginTxt} mb-1 pt-1`}>{userName}</p>
-                        <Button size="small" type="primary" onClick={handleLogout}>Logout</Button>
-                    </div>
-                </Space>
+                {
+                    isAuth && <Space align="start">
+                        <img src={avatarUrl ?? avatar} alt="avatar" width="50px"/>
+                        <div className="text-center">
+                            <p className={`${styles.loginTxt} mb-1 pt-1`}>{userName}</p>
+                            <Button size="small" type="primary" onClick={handleLogout}>Logout</Button>
+                        </div>
+                    </Space>
                 }
             </Col>
         </Row>

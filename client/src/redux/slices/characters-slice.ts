@@ -32,9 +32,7 @@ export const fetchCharacter = createAsyncThunk<CharacterType, number, { rejectVa
         const { characters: { visitedCharacters } } = getState()
         const visitedCharacter = visitedCharacters.find(char => char.id === id)
 
-        if (visitedCharacter) {
-            return visitedCharacter
-        }
+        if (visitedCharacter) return visitedCharacter
 
         try {
             const character = await charactersAPI.getCharacter(id)

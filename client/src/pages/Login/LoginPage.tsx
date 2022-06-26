@@ -17,7 +17,6 @@ const LoginPage: FC = () => {
 
     const handleSetAvatar = (url: string) => dispatch(setAvatar(url))
     const handleLogin = ({ username }: { username: string }) => dispatch(setUserName(username))
-    const handleLoginFailed = (errorInfo: any) => console.error('Failed:', errorInfo)
 
     useEffect(() => {
         if (isAuth) navigate('/characters', { replace: true })
@@ -44,11 +43,8 @@ const LoginPage: FC = () => {
                 span: 16,
             }}
             onFinish={handleLogin}
-            onFinishFailed={handleLoginFailed}
         >
-            <Form.Item
-                label="Avatar"
-            >
+            <Form.Item label="Avatar">
                 <AvatarUploadForm listType='picture-card' handleSetAvatar={handleSetAvatar}/>
             </Form.Item>
             <Form.Item

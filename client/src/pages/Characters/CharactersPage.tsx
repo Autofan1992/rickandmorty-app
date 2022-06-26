@@ -12,7 +12,6 @@ import {
 } from '../../redux/selectors/characters-selectors'
 import Preloader from '../../components/common/Preloader/Preloader'
 import CharacterItem from '../../components/Characters/CharacterItem/CharacterItem'
-import { Outlet } from 'react-router-dom'
 
 const { Title } = Typography
 
@@ -34,22 +33,22 @@ const CharactersPage: FC = () => {
     }
 
     return <>
-        <Outlet/>
         <Title level={2} className="m-0 lh-lg text-center mb-3 mb-md-5">Characters</Title>
         <div className="my-4 text-center">
             <AutoCompleteForm/>
         </div>
-        <div className='px-3'>
+        <div className="px-3">
             <Row gutter={[15, 15]}>
-                {isFetching
-                    ? <Preloader/>
-                    : characters.map(char => <CharacterItem key={char.id} {...char} />)}
+                {
+                    isFetching
+                        ? <Preloader/>
+                        : characters.map(char => <CharacterItem key={char.id} {...char} />)
+                }
             </Row>
         </div>
         <div className="mt-4 d-flex justify-content-center">
             <Pagination current={currentPage} onChange={handlePageChange} total={pagesCount} showSizeChanger={false}/>
         </div>
-
     </>
 }
 

@@ -26,8 +26,8 @@ const CharacterPage: FC<PropsType> = ({ windowWidth }) => {
         dispatch(fetchCharacter(+charId))
     }, [dispatch, charId])
 
-    const handleLikeOrDislike = (method: LikeDislikeEnum, id: number) => {
-        dispatch(setLikeOrDislike({ method, id }))
+    const handleLikeOrDislike = (method: LikeDislikeEnum) => {
+        dispatch(setLikeOrDislike({ method, id: +charId }))
     }
 
     const handleSetAvatar = (url: string) => {
@@ -59,11 +59,11 @@ const CharacterPage: FC<PropsType> = ({ windowWidth }) => {
                 actions={[
                     <LikeIcon
                         key="like"
-                        onClick={() => handleLikeOrDislike(LikeDislikeEnum.Like, +charId)}
+                        onClick={() => handleLikeOrDislike(LikeDislikeEnum.Like)}
                     />,
                     <DislikeIcon
                         key="dislike"
-                        onClick={() => handleLikeOrDislike(LikeDislikeEnum.Dislike, +charId)}
+                        onClick={() => handleLikeOrDislike(LikeDislikeEnum.Dislike)}
                     />
                 ]}
             >
@@ -112,7 +112,7 @@ const CharacterPage: FC<PropsType> = ({ windowWidth }) => {
                 </Row>
                 <div className="info-line mt-3 mt-md-5">
                     <p className="mb-0">Episodes:</p>
-                    <Title level={5}>{char?.episode.join(', ')}</Title>
+                    <Title level={5}>{char.episode.join(', ')}</Title>
                 </div>
             </Card>
         </Col>
