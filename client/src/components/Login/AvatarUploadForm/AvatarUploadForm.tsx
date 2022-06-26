@@ -3,6 +3,7 @@ import { message, Upload } from 'antd'
 import type { UploadChangeParam } from 'antd/es/upload'
 import type { RcFile, UploadProps } from 'antd/es/upload/interface'
 import { FC, useState } from 'react'
+import { UploadListType } from 'antd/lib/upload/interface'
 
 const getBase64 = (img: RcFile, callback: (url: string) => void) => {
     const reader = new FileReader()
@@ -22,7 +23,7 @@ const beforeUpload = (file: RcFile) => {
     return isJpgOrPng && isLt2M
 }
 
-const AvatarUploadForm: FC<PropsType> = ({imgUrl = '', handleSetAvatar }) => {
+const AvatarUploadForm: FC<PropsType> = ({imgUrl = '', handleSetAvatar, listType }) => {
     const [loading, setLoading] = useState(false)
     const [imageUrl, setImageUrl] = useState<string>(imgUrl)
 
@@ -50,8 +51,7 @@ const AvatarUploadForm: FC<PropsType> = ({imgUrl = '', handleSetAvatar }) => {
     return (
         <Upload
             name="avatar"
-            listType="picture-card"
-            className="avatar-uploader"
+            listType={listType}
             showUploadList={false}
             action="http://localhost:5000/avatar"
             beforeUpload={beforeUpload}
@@ -65,6 +65,7 @@ const AvatarUploadForm: FC<PropsType> = ({imgUrl = '', handleSetAvatar }) => {
 export default AvatarUploadForm
 
 type PropsType = {
+    listType: UploadListType
     imgUrl?: string
     handleSetAvatar: (url: string) => void
 }

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const axios = require('axios')
@@ -18,8 +19,8 @@ const getAccessToken = async (code) => {
                 grant_type: 'authorization_code',
                 code,
                 redirect_uri: 'http://localhost:5000/login',
-                client_id: '782l68t2mkud14',
-                client_secret: 'ADXPTQd5AaLjgVL0'
+                client_id: process.env.CLIENT_ID,
+                client_secret: process.env.CLIENT_SECRET
             }
         })
     } catch (e) {
@@ -63,7 +64,7 @@ app.get('/me', (req, res) => {
     }
 })
 
-app.post('/avatar',(req, res) => {
+app.post('/avatar', (req, res) => {
     res.send(req.body)
 })
 

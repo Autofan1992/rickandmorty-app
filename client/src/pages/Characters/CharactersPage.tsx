@@ -35,15 +35,17 @@ const CharactersPage: FC = () => {
 
     return <>
         <Outlet/>
-        <Title level={2} className="m-0 lh-lg text-center mb-5">Characters</Title>
+        <Title level={2} className="m-0 lh-lg text-center mb-3 mb-md-5">Characters</Title>
         <div className="my-4 text-center">
             <AutoCompleteForm/>
         </div>
-        <Row>
-            {isFetching
-                ? <Preloader/>
-                : characters.map(char => <CharacterItem key={char.id} {...char} />)}
-        </Row>
+        <div className='px-3'>
+            <Row gutter={[15, 15]}>
+                {isFetching
+                    ? <Preloader/>
+                    : characters.map(char => <CharacterItem key={char.id} {...char} />)}
+            </Row>
+        </div>
         <div className="mt-4 d-flex justify-content-center">
             <Pagination current={currentPage} onChange={handlePageChange} total={pagesCount} showSizeChanger={false}/>
         </div>
