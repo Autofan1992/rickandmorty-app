@@ -2,7 +2,9 @@
   line-height: 1 !important;
 
   .headerRow {
-    min-height: 64px;
+    .title {
+      font-size: 30px;
+    }
 
     .likesBadge {
       color: #fff;
@@ -12,6 +14,17 @@
   .loginTxt {
     color: #fff;
     margin-bottom: .5rem;
+  }
+
+  @media (max-width: 767px) {
+    height: 80px;
+    padding: 0 15px;
+
+    .headerRow {
+      .title {
+        font-size: 20px;
+      }
+    }
   }
 }
 

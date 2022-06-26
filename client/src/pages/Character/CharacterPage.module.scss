@@ -1,0 +1,18 @@
+.characterCard {
+  .forAvatar {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    transition: .2s;
+
+    &:hover {
+      opacity: .8;
+      border-color: #faad14;
+    }
+  }
+
+  @media (max-width: 767px) {
+    max-width: 345px;
+  }
+}

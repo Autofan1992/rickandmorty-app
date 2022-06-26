@@ -22,27 +22,30 @@ const Header: FC = () => {
 
     return <HeaderANT className={styles.header}>
         <Row justify="space-between" align="middle" gutter={30} className={styles.headerRow}>
-            <Col>
-                <Title type="warning" level={2} className="m-0 lh-lg">
-                    <Link to="" className="text-reset">Rick and morty</Link>
-                </Title>
+            <Col className='flex-fill'>
+                <div className="d-md-flex">
+                    <Title type="warning" level={2} className={`${styles.title} m-0 lh-lg`}>
+                        <Link to="" className="text-reset">Rick and morty</Link>
+                    </Title>
+                    {likedChars.length > 0 &&
+                        <div className='flex-fill d-flex align-items-center justify-content-md-end'>
+                            <Badge className={`${styles.likesBadge} mt-1`} count={likedChars.length}>
+                                <Popover content={likedChars.map(char => <p key={char.id}>{char.name}</p>)}>
+                                    <Button size="small">Liked characters</Button>
+                                </Popover>
+                            </Badge>
+                        </div>}
+                </div>
             </Col>
-            <Col>
-                <>
-                    {likedChars.length > 0 && <Badge className={`${styles.likesBadge} me-5`} count={likedChars.length}>
-                        <Popover content={likedChars.map(char => <p key={char.id}>{char.name}</p>)}>
-                            <Button size='small'>Liked characters</Button>
-                        </Popover>
-                    </Badge>}
-                    {isAuth && <Space align="start">
-                        <img src={avatarUrl ?? avatar} alt="avatar" width="50px"/>
-                        <div className="text-center">
-                            <p className={`${styles.loginTxt} mb-1 pt-1`}>{userName}</p>
-                            <Button size="small" type="primary" onClick={handleLogout}>Logout</Button>
-                        </div>
-                    </Space>
-                    }
-                </>
+            <Col xs="auto">
+                {isAuth && <Space align="start">
+                    <img src={avatarUrl ?? avatar} alt="avatar" width="50px"/>
+                    <div className="text-center">
+                        <p className={`${styles.loginTxt} mb-1 pt-1`}>{userName}</p>
+                        <Button size="small" type="primary" onClick={handleLogout}>Logout</Button>
+                    </div>
+                </Space>
+                }
             </Col>
         </Row>
     </HeaderANT>

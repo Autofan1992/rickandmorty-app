@@ -9,12 +9,12 @@ const CharacterItem: FC<CharacterType> = (char) => {
         ? styles.alive
         : char.status === CharacterStatusEnum.Dead && styles.dead
 
-    return <Col key={char.id} xl={8} md={12}>
-        <div className={styles.characterCard}>
+    return <Col key={char.id} md={8} lg={12} xxl={8}>
+        <div className={`${styles.characterCard} d-flex flex-column flex-lg-row`}>
             <div className={styles.cardImg}>
                 <img src={char.image} alt={char.name}/>
             </div>
-            <div className={`${styles.cardContent} p-2`}>
+            <div className={`${styles.cardContent} d-flex flex-column p-3`}>
                 <h2 className="text-reset">{char.name}</h2>
                 <p className="d-flex align-items-center mb-3">
                     <span className={`${styles.status} ${statusClass}`}></span>
@@ -22,13 +22,15 @@ const CharacterItem: FC<CharacterType> = (char) => {
                     <span className="px-1">-</span>
                     <span>{char.gender}</span>
                 </p>
-                <div className="info-line mb-5">
+                <div className="info-line">
                     <p className="text-white-50 mb-1">Last known location:</p>
                     <p className="fw-bold fs-6">{char.location.name}</p>
                 </div>
-                <Button>
-                    <Link to={`${char.id}`}>Visit character's page</Link>
-                </Button>
+                <div className="mt-auto">
+                    <Button>
+                        <Link to={`${char.id}`}>Visit character's page</Link>
+                    </Button>
+                </div>
             </div>
         </div>
     </Col>

@@ -1,9 +1,8 @@
 .characterCard {
-  display: flex;
   overflow: hidden;
+  height: 100%;
   background: rgb(60, 62, 68);
   border-radius: 0.5rem;
-  margin: 0.75rem;
   box-shadow: rgb(0 0 0 / 10%) 0 4px 6px -1px,
   rgb(0 0 0 / 6%) 0 2px 4px -1px;
 
@@ -12,10 +11,7 @@
     max-width: 250px;
 
     img {
-      width: 100%;
-      height: 100%;
       margin: 0;
-      opacity: 1;
       transition: opacity 0.5s ease 0s;
       object-position: center center;
       object-fit: cover;
@@ -40,6 +36,15 @@
       &.dead {
         background: rgb(214, 61, 46);
       }
+    }
+  }
+
+  @media (max-width: 991px) {
+    max-width: 300px;
+    margin: auto;
+
+    .cardImg {
+      max-width: none;
     }
   }
 }
