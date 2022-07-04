@@ -1,13 +1,13 @@
 import { CharacterStatusEnum, CharacterType } from '../../../types/character-types'
-import styles from '../../../pages/Characters/CharactersPage.module.scss'
+import styles from '../../../pages/Characters/Characters.module.scss'
 import { Button, Col } from 'antd'
 import { Link } from 'react-router-dom'
 import { FC } from 'react'
 
 const CharacterItem: FC<CharacterType> = (char) => {
-    const statusClass = char.status === CharacterStatusEnum.Alive
-        ? styles.alive
-        : char.status === CharacterStatusEnum.Dead && styles.dead
+    const statusClass = char.status === CharacterStatusEnum.Alive ? styles.alive
+        : char.status === CharacterStatusEnum.Dead ? styles.dead
+            : ``
 
     return <Col key={char.id} md={8} lg={12} xxl={8}>
         <div className={`${styles.characterCard} d-flex flex-column flex-lg-row`}>

@@ -9,7 +9,7 @@ import { selectIsAuth } from '../../redux/selectors/auth-selectors'
 
 const { Title } = Typography
 
-const LoginPage: FC = () => {
+const Login: FC = () => {
     const dispatch = useAppDispatch()
     const isAuth = useAppSelector(selectIsAuth)
     const navigate = useNavigate()
@@ -86,4 +86,4 @@ const LoginPage: FC = () => {
     </>
 }
 
-export default LoginPage
+export default Login

@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { Typography } from 'antd'
-import styles from './NotFoundPage.module.scss'
+import styles from './NotFound.module.scss'
 import { Link } from 'react-router-dom'
 
 const { Title } = Typography
 
-const NotFoundPage: FC = () => {
+const NotFound: FC = () => {
     return <div className={`${styles.notFound} ant-space ant-space-align-center text-center ant-row-center`}>
         <div>
             <Title>There's nothing here!</Title>
@@ -14,4 +14,4 @@ const NotFoundPage: FC = () => {
     </div>
 }
 
-export default NotFoundPage
+export default NotFound

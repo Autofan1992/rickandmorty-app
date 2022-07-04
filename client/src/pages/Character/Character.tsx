@@ -10,11 +10,11 @@ import Preloader from '../../components/common/Preloader/Preloader'
 import { CharacterType, LikeDislikeEnum } from '../../types/character-types'
 import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons'
 import AvatarUploadForm from '../../components/Login/AvatarUploadForm/AvatarUploadForm'
-import styles from './CharacterPage.module.scss'
+import styles from './Character.module.scss'
 
 const { Title } = Typography
 
-const CharacterPage: FC<PropsType> = ({ windowWidth }) => {
+const Character: FC<PropsType> = ({ windowWidth }) => {
     const dispatch = useAppDispatch()
     const isFetching = useAppSelector(selectIsFetchingCharacters)
     const { id: charId = 1 } = useParams()
@@ -123,4 +123,4 @@ type PropsType = {
     windowWidth: number
 }
 
-export default CharacterPage
+export default Character

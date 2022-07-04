@@ -3,14 +3,14 @@ import React, { FC, lazy, Suspense, useEffect, useState } from 'react'
 import Header from '../Header/Header'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Preloader from '../common/Preloader/Preloader'
-import LoginPage from '../../pages/Login/LoginPage'
-import CharactersPage from '../../pages/Characters/CharactersPage'
-import NotFoundPage from '../../pages/404/NotFoundPage'
+import Login from '../../pages/Login/Login'
+import Characters from '../../pages/Characters/Characters'
+import NotFound from '../../pages/404/NotFound'
 import Footer from '../Footer/Footer'
 
 const { Content } = Layout
 
-const CharacterPage = lazy(() => import('../../pages/Character/CharacterPage'))
+const CharacterPage = lazy(() => import('../../pages/Character/Character'))
 
 const App: FC = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -26,10 +26,10 @@ const App: FC = () => {
             <Suspense fallback={<Preloader/>}>
                 <Routes>
                     <Route path="/" element={<Navigate to="characters" replace/>}/>
-                    <Route path="login" element={<LoginPage/>}/>
-                    <Route path="characters" element={<CharactersPage/>}/>
+                    <Route path="login" element={<Login/>}/>
+                    <Route path="characters" element={<Characters/>}/>
                     <Route path="characters/:id" element={<CharacterPage windowWidth={windowWidth}/>}/>
-                    <Route path="*" element={<NotFoundPage/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Suspense>
         </Content>

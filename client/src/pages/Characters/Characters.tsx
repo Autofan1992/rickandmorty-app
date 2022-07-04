@@ -15,7 +15,7 @@ import CharacterItem from '../../components/Characters/CharacterItem/CharacterIt
 
 const { Title } = Typography
 
-const CharactersPage: FC = () => {
+const Characters: FC = () => {
     const dispatch = useAppDispatch()
     const characters = useAppSelector(selectCharacters)
     const isFetching = useAppSelector(selectIsFetchingCharacters)
@@ -52,4 +52,4 @@ const CharactersPage: FC = () => {
     </>
 }
 
-export default CharactersPage
+export default Characters
