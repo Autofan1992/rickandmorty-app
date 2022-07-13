@@ -50,7 +50,7 @@ app.get('/login', async (req, res) => {
 
         setAuthInfo(localizedFirstName, avatarUrl)
 
-        res.redirect(`http://localhost:3000/login?loginSuccess=true`)
+        res.redirect(`https://rick-and-morty-8.netlify.app/login?loginSuccess=true`)
     } catch (e) {
         console.warn(e)
     }

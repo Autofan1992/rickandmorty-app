@@ -28,7 +28,7 @@ const Header: FC = () => {
                         <Link to="" className="text-reset">Rick and morty</Link>
                     </Title>
                     {
-                        likedChars.length > 0 &&
+                        isAuth && likedChars.length > 0 &&
                         <Badge className={`${styles.likesBadge} mt-2`} count={likedChars.length}>
                             <Popover content={likedChars.map(char => <p key={char.id}>{char.name}</p>)}>
                                 <Button size="small">Liked characters</Button>

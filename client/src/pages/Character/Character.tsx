@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, memo, useEffect } from 'react'
 import { Card, Col, Row, Typography } from 'antd'
 import { Link, useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
@@ -14,7 +14,7 @@ import styles from './Character.module.scss'
 
 const { Title } = Typography
 
-const Character: FC<PropsType> = ({ windowWidth }) => {
+const Character: FC<PropsType> = memo(({ windowWidth }) => {
     const dispatch = useAppDispatch()
     const isFetching = useAppSelector(selectIsFetchingCharacters)
     const { id: charId = 1 } = useParams()
@@ -117,7 +117,7 @@ const Character: FC<PropsType> = ({ windowWidth }) => {
             </Card>
         </Col>
     </Row>
-}
+})
 
 type PropsType = {
     windowWidth: number

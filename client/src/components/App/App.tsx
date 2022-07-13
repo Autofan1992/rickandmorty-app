@@ -17,7 +17,9 @@ const App: FC = () => {
 
     useEffect(() => {
         window.addEventListener('resize', () => setWindowWidth(window.innerWidth))
-        return () => window.removeEventListener('resize', () => setWindowWidth(window.innerWidth))
+        return () => {
+            window.removeEventListener('resize', () => setWindowWidth(window.innerWidth))
+        }
     })
 
     return <Layout className="layout d-flex flex-column justify-content-between wrapper">

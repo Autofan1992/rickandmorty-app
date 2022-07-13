@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, memo, useEffect } from 'react'
 import useAuthRedirect from '../../hooks/useAuthRedirect'
 import { Pagination, Row, Typography } from 'antd'
 import AutoCompleteForm from '../../components/Characters/AutoCompleteForm/AutoCompleteForm'
@@ -15,7 +15,7 @@ import CharacterItem from '../../components/Characters/CharacterItem/CharacterIt
 
 const { Title } = Typography
 
-const Characters: FC = () => {
+const Characters: FC = memo(() => {
     const dispatch = useAppDispatch()
     const characters = useAppSelector(selectCharacters)
     const isFetching = useAppSelector(selectIsFetchingCharacters)
@@ -50,6 +50,6 @@ const Characters: FC = () => {
             <Pagination current={currentPage} onChange={handlePageChange} total={pagesCount} showSizeChanger={false}/>
         </div>
     </>
-}
+})
 
 export default Characters
