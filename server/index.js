@@ -18,7 +18,7 @@ const getAccessToken = async (code) => {
             params: {
                 grant_type: 'authorization_code',
                 code,
-                redirect_uri: 'http://localhost:5000/login',
+                redirect_uri: 'https://rick-and-morty-linkedin.herokuapp.com/login',
                 client_id: process.env.CLIENT_ID,
                 client_secret: process.env.CLIENT_SECRET
             }
