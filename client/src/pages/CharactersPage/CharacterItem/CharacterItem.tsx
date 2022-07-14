@@ -2,9 +2,9 @@ import { CharacterStatusEnum, CharacterType } from '../../../types/character-typ
 import styles from '../Characters.module.scss'
 import { Button, Col } from 'antd'
 import { Link } from 'react-router-dom'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
-const CharacterItem: FC<CharacterType> = (char) => {
+const CharacterItem: FC<CharacterType> = memo((char) => {
     const statusClass = char.status === CharacterStatusEnum.Alive ? styles.alive
         : char.status === CharacterStatusEnum.Dead ? styles.dead
             : ``
@@ -34,6 +34,6 @@ const CharacterItem: FC<CharacterType> = (char) => {
             </div>
         </div>
     </Col>
-}
+})
 
 export default CharacterItem

@@ -9,7 +9,7 @@ export type AxiosResponseErrorType = {
 }
 
 export const axiosLoginInstance = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://rickandmorty-linkedin.herokuapp.com',
 })
 export const axiosCharactersInstance = axios.create({
     baseURL: 'https://rickandmortyapi.com/api',

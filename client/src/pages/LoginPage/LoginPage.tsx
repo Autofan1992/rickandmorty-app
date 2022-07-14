@@ -76,7 +76,7 @@ const LoginPage: FC = () => {
         </Form>
         <Title level={3} className="mt-2 mb-4 lh-lg text-center">Or you can</Title>
         <div className="for-btn text-center">
-            <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=782l68t2mkud14&scope=r_liteprofile&redirect_uri=http://localhost:5000/login">
+            <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&amp;client_id=782l68t2mkud14&amp;scope=r_liteprofile&amp;redirect_uri=https://rickandmorty-linkedin.herokuapp.com/auth">
                 <img
                     src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
                     alt="sign in with linkedin"
