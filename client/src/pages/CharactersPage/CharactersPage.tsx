@@ -1,7 +1,7 @@
 import { FC, memo, useEffect } from 'react'
 import useAuthRedirect from '../../hooks/useAuthRedirect'
 import { Pagination, Row, Typography } from 'antd'
-import AutoCompleteForm from '../../components/Characters/AutoCompleteForm/AutoCompleteForm'
+import AutoCompleteForm from './AutoCompleteForm/AutoCompleteForm'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { fetchCharacters } from '../../redux/slices/characters-slice'
 import {
@@ -10,12 +10,12 @@ import {
     selectIsFetchingCharacters,
     selectPagesCount
 } from '../../redux/selectors/characters-selectors'
-import Preloader from '../../components/common/Preloader/Preloader'
-import CharacterItem from '../../components/Characters/CharacterItem/CharacterItem'
+import Preloader from '../../components/Preloader/Preloader'
+import CharacterItem from './CharacterItem/CharacterItem'
 
 const { Title } = Typography
 
-const Characters: FC = memo(() => {
+const CharactersPage: FC = memo(() => {
     const dispatch = useAppDispatch()
     const characters = useAppSelector(selectCharacters)
     const isFetching = useAppSelector(selectIsFetchingCharacters)
@@ -52,4 +52,4 @@ const Characters: FC = memo(() => {
     </>
 })
 
-export default Characters
+export default CharactersPage

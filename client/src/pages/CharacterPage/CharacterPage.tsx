@@ -6,15 +6,15 @@ import { selectCharacter, selectIsFetchingCharacters } from '../../redux/selecto
 import { fetchCharacter, setCharacterAvatar, setLikeOrDislike } from '../../redux/slices/characters-slice'
 import { isEmpty } from 'lodash'
 import useAuthRedirect from '../../hooks/useAuthRedirect'
-import Preloader from '../../components/common/Preloader/Preloader'
+import Preloader from '../../components/Preloader/Preloader'
 import { CharacterType, LikeDislikeEnum } from '../../types/character-types'
 import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons'
-import AvatarUploadForm from '../../components/Login/AvatarUploadForm/AvatarUploadForm'
+import AvatarUploadForm from '../LoginPage/AvatarUploadForm/AvatarUploadForm'
 import styles from './Character.module.scss'
 
 const { Title } = Typography
 
-const Character: FC<PropsType> = memo(({ windowWidth }) => {
+const CharacterPage: FC<PropsType> = memo(({ windowWidth }) => {
     const dispatch = useAppDispatch()
     const isFetching = useAppSelector(selectIsFetchingCharacters)
     const { id: charId = 1 } = useParams()
@@ -123,4 +123,4 @@ type PropsType = {
     windowWidth: number
 }
 
-export default Character
+export default CharacterPage

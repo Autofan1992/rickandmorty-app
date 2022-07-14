@@ -1,5 +1,5 @@
 import { CharacterStatusEnum, CharacterType } from '../../../types/character-types'
-import styles from '../../../pages/Characters/Characters.module.scss'
+import styles from '../Characters.module.scss'
 import { Button, Col } from 'antd'
 import { Link } from 'react-router-dom'
 import { FC } from 'react'

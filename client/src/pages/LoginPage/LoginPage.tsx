@@ -2,14 +2,14 @@ import { FC, useEffect } from 'react'
 
 import { Button, Form, Input, Typography } from 'antd'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
-import AvatarUploadForm from '../../components/Login/AvatarUploadForm/AvatarUploadForm'
+import AvatarUploadForm from './AvatarUploadForm/AvatarUploadForm'
 import { login, setAvatar, setUserName } from '../../redux/slices/auth-slice'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { selectIsAuth } from '../../redux/selectors/auth-selectors'
 
 const { Title } = Typography
 
-const Login: FC = () => {
+const LoginPage: FC = () => {
     const dispatch = useAppDispatch()
     const isAuth = useAppSelector(selectIsAuth)
     const navigate = useNavigate()
@@ -86,4 +86,4 @@ const Login: FC = () => {
     </>
 }
 
-export default Login
+export default LoginPage
