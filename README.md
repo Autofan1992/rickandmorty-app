@@ -1,3 +1,3 @@
 # Rick and Morty
 
-## App link: https://app.netlify.com/sites/stocks-app-8
+## App link: https://rick-and-morty-8.netlify.app
