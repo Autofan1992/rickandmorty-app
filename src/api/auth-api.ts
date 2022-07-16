@@ -3,6 +3,6 @@ import { AuthInfoType } from '../types/auth-types'
 
 export const authAPI = {
     getAuthInfo: () => axiosLoginInstance
-        .get<AuthInfoType>('me')
+        .get<AuthInfoType>('login/me')
         .then(res => res.data)
 }
