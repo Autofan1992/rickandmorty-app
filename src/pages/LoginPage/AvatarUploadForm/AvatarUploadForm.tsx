@@ -53,7 +53,7 @@ const AvatarUploadForm: FC<PropsType> = ({imgUrl = '', handleSetAvatar, listType
             name="avatar"
             listType={listType}
             showUploadList={false}
-            action="http://localhost:5000/avatar"
+            action="https://rickandmorty-linkedin.herokuapp.com/avatar"
             beforeUpload={beforeUpload}
             onChange={handleChange}
         >

@@ -9,7 +9,7 @@ const CharacterItem: FC<CharacterType> = memo((char) => {
         : char.status === CharacterStatusEnum.Dead ? styles.dead
             : ``
 
-    return <Col key={char.id} md={8} lg={12} xxl={8}>
+    return <Col key={char.id} xs={24} md={8} lg={12} xxl={8}>
         <div className={`${styles.characterCard} d-flex flex-column flex-lg-row`}>
             <div className={styles.cardImg}>
                 <img src={char.image} alt={char.name}/>
